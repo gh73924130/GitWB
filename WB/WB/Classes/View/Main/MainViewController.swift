@@ -20,11 +20,28 @@ class MainViewController: UITabBarController {
         //设置tabbar的tintcolor
         tabBar.tintColor = UIColor.orange
         
-        addChildController(controllerName: "HomeViewController", image: "tabbar_home", title: "首页")
-        addChildController(controllerName: "MessageViewController", image: "tabbar_message_center", title: "消息")
-        addChildController(controllerName: "DiscoverViewController", image: "tabbar_discover", title: "发现")
-        addChildController(controllerName: "ProfileViewController", image: "tabbar_profile", title: "我")
-        
+        //获取json数据
+        let path = Bundle.main.path(forResource: "MainVCSettings.json", ofType: nil)
+        //通过文件路径创建NSData
+        guard let jsonPath = path,
+            let jsonData = NSData(contentsOfFile: jsonPath) else {
+                return
+        }
+        //序列化json数据-> Array
+        do {
+            let dictArray = try JSONSerialization.jsonObject(with: jsonData as Data, options:.mutableContainers)
+            //遍历字典
+//            for dict in dictArray as! [String: String] {
+//                addChildController(controllerName: dict["vcName"], image: dict["imageName"], title: dict["title"])
+//            }
+            //TODO:JSON序列化出错,暂时没有处理
+        }catch{
+            //如果没有就用原始的
+            addChildController(controllerName: "HomeViewController", image: "tabbar_home", title: "首页")
+            addChildController(controllerName: "MessageViewController", image: "tabbar_message_center", title: "消息")
+            addChildController(controllerName: "DiscoverViewController", image: "tabbar_discover", title: "发现")
+            addChildController(controllerName: "ProfileViewController", image: "tabbar_profile", title: "我")
+        }
     }
     
     private func addChildController(controllerName: String,image:String,title:String) {
