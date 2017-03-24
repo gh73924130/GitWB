@@ -16,6 +16,7 @@
 		0CD9B12A1E84F4D800EF4C7C /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD9B1291E84F4D800EF4C7C /* MessageViewController.swift */; };
 		0CD9B12C1E84F4E200EF4C7C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD9B12B1E84F4E200EF4C7C /* ProfileViewController.swift */; };
 		0CD9B12F1E84FB9A00EF4C7C /* Bundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD9B12E1E84FB9A00EF4C7C /* Bundle+extension.swift */; };
+		0CD9B1311E85123D00EF4C7C /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 0CD9B1301E85123D00EF4C7C /* MainVCSettings.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		0CD9B1291E84F4D800EF4C7C /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		0CD9B12B1E84F4E200EF4C7C /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0CD9B12E1E84FB9A00EF4C7C /* Bundle+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+extension.swift"; sourceTree = "<group>"; };
+		0CD9B1301E85123D00EF4C7C /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 		0CD9B11B1E84CE6900EF4C7C /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				0CD9B1301E85123D00EF4C7C /* MainVCSettings.json */,
 				0CD9B11F1E84CEAC00EF4C7C /* MainViewController.swift */,
 				0CD9B1211E84CEC000EF4C7C /* NavViewController.swift */,
 			);
@@ -224,6 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CD9B1311E85123D00EF4C7C /* MainVCSettings.json in Resources */,
 				0CBABA2B1E8249D800CA3E26 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

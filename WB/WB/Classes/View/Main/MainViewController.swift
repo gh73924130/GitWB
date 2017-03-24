@@ -20,21 +20,28 @@ class MainViewController: UITabBarController {
         //设置tabbar的tintcolor
         tabBar.tintColor = UIColor.orange
         
-        addChildController(controller: HomeViewController(), image: "tabbar_home", title: "首页")
-        addChildController(controller: MessageViewController(), image: "tabbar_message_center", title: "消息")
-        addChildController(controller: DiscoverViewController(), image: "tabbar_discover", title: "发现")
-        addChildController(controller: ProfileViewController(), image: "tabbar_profile", title: "我")
+        addChildController(controllerName: "HomeViewController", image: "tabbar_home", title: "首页")
+        addChildController(controllerName: "MessageViewController", image: "tabbar_message_center", title: "消息")
+        addChildController(controllerName: "DiscoverViewController", image: "tabbar_discover", title: "发现")
+        addChildController(controllerName: "ProfileViewController", image: "tabbar_profile", title: "我")
         
     }
     
-    private func addChildController(controller: UIViewController,image:String,title:String) {
-        //1.1 设置首页数据
-        controller.tabBarItem.image = UIImage(named: image)
-        controller.tabBarItem.selectedImage = UIImage(named: image + "_highlighted")
-        controller.tabBarItem.title = title
+    private func addChildController(controllerName: String,image:String,title:String) {
+        //通过字符串创建类,涉及到命名空间
+        let namespace = Bundle.main.namespace
+        let cls: AnyClass? = NSClassFromString(namespace + "."+controllerName)
+        //通过类创建对象
+        let vcCls = cls as! UIViewController.Type
+        let vc = vcCls.init()
+//        1.1 设置首页数据
+        vc.tabBarItem.image = UIImage(named: image)
+        vc.tabBarItem.selectedImage = UIImage(named: image + "_highlighted")
+        vc.tabBarItem.title = title
+        vc.title = title
         //
         let nav = UINavigationController()
-        nav.addChildViewController(controller)
+        nav.addChildViewController(vc)
         
         addChildViewController(nav)
     }
