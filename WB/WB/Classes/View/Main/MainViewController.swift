@@ -34,18 +34,20 @@ class MainViewController: UITabBarController {
         composeBtn.frame = rect
     }
     
-    private lazy var composeBtn = { () -> UIButton in 
+    private lazy var composeBtn: UIButton = {
+        
         let btn = UIButton()
         btn.setImage(UIImage.init(named: "tabbar_compose_icon_add"), for: .normal)
         btn.setImage(UIImage.init(named: "tabbar_compose_icon_add_highlighted"), for: .highlighted)
         btn.setBackgroundImage(UIImage.init(named: "tabbar_compose_button"), for: .normal)
         btn.setBackgroundImage(UIImage.init(named: "tabbar_compose_button_highlighted"), for: .highlighted)
+        btn.addTarget(self, action: #selector(composeBtnClick), for: .touchUpInside)
         
         return btn
         
     }()
-    
-     func composeBtnClick() {
+    //@OBJC能保证方法私有,仅仅在本类有用,意思 允许函数在运行时通过运行时访问,又能保证函数是私有的
+    @objc private func composeBtnClick() {
         print("sd")
     }
     
