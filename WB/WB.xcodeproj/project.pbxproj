@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0CBABA241E8249D800CA3E26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBABA231E8249D800CA3E26 /* AppDelegate.swift */; };
 		0CBABA2B1E8249D800CA3E26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CBABA2A1E8249D800CA3E26 /* Assets.xcassets */; };
+		0CD881301E86D6E6004B8A4C /* UIBarButtonItem+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD8812F1E86D6E6004B8A4C /* UIBarButtonItem+extension.swift */; };
 		0CD9B1201E84CEAC00EF4C7C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD9B11F1E84CEAC00EF4C7C /* MainViewController.swift */; };
 		0CD9B1221E84CEC000EF4C7C /* NavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD9B1211E84CEC000EF4C7C /* NavViewController.swift */; };
 		0CD9B1261E84F4BA00EF4C7C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD9B1251E84F4BA00EF4C7C /* HomeViewController.swift */; };
@@ -27,6 +28,7 @@
 		0CBABA231E8249D800CA3E26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CBABA2A1E8249D800CA3E26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0CBABA2F1E8249D800CA3E26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0CD8812F1E86D6E6004B8A4C /* UIBarButtonItem+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIBarButtonItem+extension.swift"; path = "../UIBarButtonItem+extension.swift"; sourceTree = "<group>"; };
 		0CD9B11F1E84CEAC00EF4C7C /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0CD9B1211E84CEC000EF4C7C /* NavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavViewController.swift; sourceTree = "<group>"; };
 		0CD9B1251E84F4BA00EF4C7C /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 		0CD9B12D1E84FB7300EF4C7C /* extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0CD8812F1E86D6E6004B8A4C /* UIBarButtonItem+extension.swift */,
 				0CD9B12E1E84FB9A00EF4C7C /* Bundle+extension.swift */,
 			);
 			name = extensions;
@@ -252,6 +255,7 @@
 				0CD9B1261E84F4BA00EF4C7C /* HomeViewController.swift in Sources */,
 				0CD9B12F1E84FB9A00EF4C7C /* Bundle+extension.swift in Sources */,
 				0CBABA241E8249D800CA3E26 /* AppDelegate.swift in Sources */,
+				0CD881301E86D6E6004B8A4C /* UIBarButtonItem+extension.swift in Sources */,
 				0CD9B1281E84F4C900EF4C7C /* DiscoverViewController.swift in Sources */,
 				0CD9B1371E86760E00EF4C7C /* VisiterView.swift in Sources */,
 				0CD9B1351E8672F400EF4C7C /* BaseViewController.swift in Sources */,

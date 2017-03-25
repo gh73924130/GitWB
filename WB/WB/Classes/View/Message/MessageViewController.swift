@@ -13,8 +13,9 @@ class MessageViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
+        if !userLogin {
+            visiter?.setupInfo("visitordiscover_image_message", title: "登录后，别人评论你的微博，发给你的消息，都会在这里收到通知", isHome: false)
+        }    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

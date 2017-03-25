@@ -13,23 +13,26 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if !userLogin {
+            visiter?.setupInfo(nil, title: "关注一些人，回这里看看有什么惊喜", isHome: true)
+            return
+        }
+        //初始化导航条
+
+        setupNav()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    private func setupNav() {
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem.createBarButtonItem(imageName: "navigationbar_friendattention", target: self, action: #selector(leftBarButtonItemClick))
+        navigationItem.rightBarButtonItem = UIBarButtonItem.createBarButtonItem(imageName: "navigationbar_pop", target: self, action: #selector(rightBarButtonItemClick))
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @objc private func leftBarButtonItemClick() {
+        print(#function)
     }
-    */
+    @objc private func rightBarButtonItemClick() {
+        print(#function)
 
+    }
 }

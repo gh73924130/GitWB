@@ -53,7 +53,7 @@ class MainViewController: UITabBarController {
     
     private func createChildControllers(){
         //设置tabbar的tintcolor
-        tabBar.tintColor = UIColor.orange
+//        tabBar.tintColor = UIColor.orange
         
         //获取json数据
         let path = Bundle.main.path(forResource: "MainVCSettings.json", ofType: nil)
