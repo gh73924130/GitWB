@@ -15,6 +15,39 @@ class MainViewController: UITabBarController {
         
         createChildControllers()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //添加+ 按钮
+        addComposeBtn()
+    }
+    
+    private func addComposeBtn() {
+
+        //1 添加到tabbar上
+        tabBar.addSubview(composeBtn)
+        
+        //2 设置 + 按钮的位置
+        let width = UIScreen.main.bounds.size.width / CGFloat((viewControllers?.count)!)
+        
+        let rect = CGRect(x: 2 * width, y: 0, width: width, height: 49)
+        
+        composeBtn.frame = rect
+    }
+    
+    private lazy var composeBtn = { () -> UIButton in 
+        let btn = UIButton()
+        btn.setImage(UIImage.init(named: "tabbar_compose_icon_add"), for: .normal)
+        btn.setImage(UIImage.init(named: "tabbar_compose_icon_add_highlighted"), for: .highlighted)
+        btn.setBackgroundImage(UIImage.init(named: "tabbar_compose_button"), for: .normal)
+        btn.setBackgroundImage(UIImage.init(named: "tabbar_compose_button_highlighted"), for: .highlighted)
+        
+        return btn
+        
+    }()
+    
+     func composeBtnClick() {
+        print("sd")
+    }
     
     private func createChildControllers(){
         //设置tabbar的tintcolor
@@ -29,19 +62,23 @@ class MainViewController: UITabBarController {
         }
         //序列化json数据-> Array
         do {
-            let dictArray = try JSONSerialization.jsonObject(with: jsonData as Data, options:.mutableContainers)
+            let dictArray = try JSONSerialization.jsonObject(with: jsonData as Data, options: .mutableContainers)
             //遍历字典
-//            for dict in dictArray as! [String: String] {
-//                addChildController(controllerName: dict["vcName"], image: dict["imageName"], title: dict["title"])
-//            }
-            //TODO:JSON序列化出错,暂时没有处理
+            for dict in dictArray as! [String: String] {
+                print(dict)
+            }
+        
+            
+            //FIXME:JSON序列化出错,暂时没有处理
         }catch{
             //如果没有就用原始的
             addChildController(controllerName: "HomeViewController", image: "tabbar_home", title: "首页")
             addChildController(controllerName: "MessageViewController", image: "tabbar_message_center", title: "消息")
+            addChildController(controllerName: "ComposeViewController", image: "", title: "")
             addChildController(controllerName: "DiscoverViewController", image: "tabbar_discover", title: "发现")
             addChildController(controllerName: "ProfileViewController", image: "tabbar_profile", title: "我")
         }
+    
     }
     
     private func addChildController(controllerName: String,image:String,title:String) {
