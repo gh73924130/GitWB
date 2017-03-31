@@ -41,7 +41,7 @@ class HomeViewController: BaseViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem.createBarButtonItem(imageName: "navigationbar_pop", target: self, action: #selector(rightBarButtonItemClick))
         //2 初始化标题按钮
         let titleBtn = TitleButton()
-        titleBtn.setTitle("sina江南 ", for: .normal)
+        titleBtn.setTitle("lau的微博 ", for: .normal)
         titleBtn.addTarget(self, action: #selector(titleBtnClick), for: .touchUpInside)
         navigationItem.titleView = titleBtn
         
@@ -64,8 +64,10 @@ class HomeViewController: BaseViewController {
         print(#function)
     }
     @objc private func rightBarButtonItemClick() {
-        print(#function)
         
+        let sb = UIStoryboard(name: "QRCodeViewConttoller", bundle: nil)
+        let vc = sb.instantiateInitialViewController()
+        present(vc!, animated: true, completion: nil)
     }
     
     //懒加载

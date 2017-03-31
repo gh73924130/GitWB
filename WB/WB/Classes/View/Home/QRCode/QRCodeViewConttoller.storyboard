@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TVK-qi-c8H">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="jwI-K8-oxr">
+            <objects>
+                <navigationController id="TVK-qi-c8H" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="JpH-Ay-90N">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="gnG-ea-tk5" kind="relationship" relationship="rootViewController" id="Kdp-xt-sTF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hGR-F8-09i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-38" y="-277"/>
+        </scene>
+        <!--扫一扫-->
+        <scene sceneID="OcY-HA-yru">
+            <objects>
+                <viewController id="gnG-ea-tk5" customClass="QRCodeViewConttoller" customModule="WB" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mrG-O6-TnJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="blt-gr-Kfn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xyn-X7-A4Z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iSy-sM-r8o">
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="Da7-rS-Bp0"/>
+                                </constraints>
+                                <items>
+                                    <tabBarItem title="二维码" image="qrcode_tabbar_icon_qrcode" id="fZq-xz-gsm"/>
+                                    <tabBarItem title="条形码" image="qrcode_tabbar_icon_barcode" id="Xwz-ZP-REx"/>
+                                </items>
+                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tabBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="blt-gr-Kfn" firstAttribute="top" secondItem="iSy-sM-r8o" secondAttribute="bottom" id="26p-C9-Yc1"/>
+                            <constraint firstAttribute="trailing" secondItem="iSy-sM-r8o" secondAttribute="trailing" id="ci7-6u-hjV"/>
+                            <constraint firstItem="iSy-sM-r8o" firstAttribute="leading" secondItem="Xyn-X7-A4Z" secondAttribute="leading" id="fSb-8f-g0q"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="扫一扫" prompt="" id="J5j-Gd-bin">
+                        <barButtonItem key="leftBarButtonItem" title="关闭" id="XIl-l9-CzF">
+                            <connections>
+                                <action selector="closeBtnClick:" destination="gnG-ea-tk5" id="SHJ-dX-nDt"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="相册" id="XnB-SB-p51"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tabbar" destination="iSy-sM-r8o" id="M2F-j5-XvB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qN7-4Q-LTi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="753" y="-271"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="qrcode_tabbar_icon_barcode" width="40" height="40"/>
+        <image name="qrcode_tabbar_icon_qrcode" width="40" height="40"/>
+    </resources>
+</document>
