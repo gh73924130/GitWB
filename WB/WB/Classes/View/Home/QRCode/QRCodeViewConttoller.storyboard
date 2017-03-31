@@ -49,16 +49,41 @@
                                 </constraints>
                                 <items>
                                     <tabBarItem title="二维码" image="qrcode_tabbar_icon_qrcode" id="fZq-xz-gsm"/>
-                                    <tabBarItem title="条形码" image="qrcode_tabbar_icon_barcode" id="Xwz-ZP-REx"/>
+                                    <tabBarItem tag="1" title="条形码" image="qrcode_tabbar_icon_barcode" id="Xwz-ZP-REx"/>
                                 </items>
                                 <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tabBar>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jXK-cr-Ye3">
+                                <rect key="frame" x="38" y="184" width="300" height="300"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qrcode_border" translatesAutoresizingMaskIntoConstraints="NO" id="SRy-Lo-FF5">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qrcode_scanline_qrcode" translatesAutoresizingMaskIntoConstraints="NO" id="cIf-d1-w8r" userLabel="冲击波">
+                                        <rect key="frame" x="0.0" y="-300" width="300" height="300"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="cIf-d1-w8r" firstAttribute="top" secondItem="jXK-cr-Ye3" secondAttribute="top" constant="-300" id="6qx-Uu-IoS"/>
+                                    <constraint firstItem="cIf-d1-w8r" firstAttribute="height" secondItem="jXK-cr-Ye3" secondAttribute="height" id="C7F-iH-NRX"/>
+                                    <constraint firstItem="SRy-Lo-FF5" firstAttribute="top" secondItem="jXK-cr-Ye3" secondAttribute="top" id="Gcj-Ve-0MA"/>
+                                    <constraint firstAttribute="width" constant="300" id="Pjb-Dj-xKv"/>
+                                    <constraint firstItem="SRy-Lo-FF5" firstAttribute="leading" secondItem="jXK-cr-Ye3" secondAttribute="leading" id="V4Y-aW-cgr"/>
+                                    <constraint firstAttribute="trailing" secondItem="cIf-d1-w8r" secondAttribute="trailing" id="dlg-9N-ZfR"/>
+                                    <constraint firstItem="cIf-d1-w8r" firstAttribute="leading" secondItem="jXK-cr-Ye3" secondAttribute="leading" id="gmg-nn-5IB"/>
+                                    <constraint firstAttribute="height" constant="300" id="hR1-Km-9NX"/>
+                                    <constraint firstAttribute="trailing" secondItem="SRy-Lo-FF5" secondAttribute="trailing" id="siq-lv-IaE"/>
+                                    <constraint firstAttribute="bottom" secondItem="SRy-Lo-FF5" secondAttribute="bottom" id="wb0-h2-6Dw"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="blt-gr-Kfn" firstAttribute="top" secondItem="iSy-sM-r8o" secondAttribute="bottom" id="26p-C9-Yc1"/>
+                            <constraint firstItem="jXK-cr-Ye3" firstAttribute="centerY" secondItem="Xyn-X7-A4Z" secondAttribute="centerY" id="9Wu-9V-mnR"/>
                             <constraint firstAttribute="trailing" secondItem="iSy-sM-r8o" secondAttribute="trailing" id="ci7-6u-hjV"/>
                             <constraint firstItem="iSy-sM-r8o" firstAttribute="leading" secondItem="Xyn-X7-A4Z" secondAttribute="leading" id="fSb-8f-g0q"/>
+                            <constraint firstItem="jXK-cr-Ye3" firstAttribute="centerX" secondItem="Xyn-X7-A4Z" secondAttribute="centerX" id="kTa-yh-I3d"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="扫一扫" prompt="" id="J5j-Gd-bin">
@@ -70,15 +95,20 @@
                         <barButtonItem key="rightBarButtonItem" title="相册" id="XnB-SB-p51"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="containerHeightCons" destination="hR1-Km-9NX" id="wVO-1W-PfI"/>
+                        <outlet property="scanLineCons" destination="6qx-Uu-IoS" id="mm8-sk-naP"/>
+                        <outlet property="scanLineView" destination="cIf-d1-w8r" id="EEM-RT-9Fo"/>
                         <outlet property="tabbar" destination="iSy-sM-r8o" id="M2F-j5-XvB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qN7-4Q-LTi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="753" y="-271"/>
+            <point key="canvasLocation" x="752.79999999999995" y="-271.21439280359823"/>
         </scene>
     </scenes>
     <resources>
+        <image name="qrcode_border" width="50" height="50"/>
+        <image name="qrcode_scanline_qrcode" width="218" height="170"/>
         <image name="qrcode_tabbar_icon_barcode" width="40" height="40"/>
         <image name="qrcode_tabbar_icon_qrcode" width="40" height="40"/>
     </resources>
